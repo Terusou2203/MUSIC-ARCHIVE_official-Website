@@ -2,98 +2,155 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    background: #111;
+    background: #0d0d0d;
     color: #fff;
     font-family: Arial, "Noto Sans JP", sans-serif;
 }
 
-/* ヘッダー */
+/* HEADER */
+
 header {
-    padding: 25px 7%;
+    height: 80px;
+    padding: 0 6%;
     border-bottom: 1px solid #333;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    position: sticky;
+    top: 0;
+
+    background: rgba(13, 13, 13, 0.95);
+    z-index: 10;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    margin-left: 25px;
-    font-size: 13px;
+    font-size: 12px;
+    letter-spacing: 2px;
 }
 
-/* メインビジュアル */
+nav a:hover {
+    opacity: 0.5;
+}
+
+
+/* HERO */
+
 .hero {
-    min-height: 75vh;
-    padding: 0 8%;
+    min-height: 85vh;
+
     display: flex;
     align-items: center;
-    background: #181818;
+
+    padding: 0 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #111 0%,
+            #111 50%,
+            #181818 100%
+        );
 }
 
 .hero h1 {
-    font-size: 90px;
-    line-height: 0.9;
     margin: 0;
-    letter-spacing: -5px;
+
+    font-size: clamp(60px, 11vw, 150px);
+    line-height: 0.85;
+
+    letter-spacing: -7px;
 }
 
 .hero p {
-    color: #999;
+    margin-top: 40px;
+
+    color: #888;
+
+    font-size: 13px;
     letter-spacing: 5px;
-    margin-top: 30px;
 }
 
-/* セクション */
+
+/* SECTION */
+
 section {
-    padding: 100px 8%;
+    padding: 120px 8%;
 }
 
 h2 {
-    font-size: 45px;
-    letter-spacing: 3px;
-    margin-bottom: 50px;
+    margin: 0 0 60px;
+
+    font-size: 48px;
+    letter-spacing: 5px;
 }
 
+
 /* NEWS */
+
 .news-item {
-    border-top: 1px solid #444;
     padding: 25px 0;
+
+    border-top: 1px solid #333;
+
+    display: flex;
+    gap: 50px;
 }
 
 .news-date {
-    color: #888;
+    color: #777;
+
     font-size: 13px;
+    min-width: 100px;
 }
 
 .news-title {
-    font-size: 18px;
-    margin-top: 8px;
+    font-size: 17px;
 }
 
-/* リンク */
+
+/* MEDIA */
+
 .link-box {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns: 1fr 1fr;
+
     gap: 20px;
 }
 
 .link-box a {
-    display: block;
-    padding: 35px;
+    padding: 60px 40px;
+
     border: 1px solid #444;
+
     color: #fff;
+
     text-decoration: none;
-    font-size: 22px;
+
+    font-size: 30px;
+    letter-spacing: 3px;
+
     transition: 0.3s;
 }
 
@@ -102,32 +159,71 @@ h2 {
     color: #111;
 }
 
-/* フッター */
-footer {
-    padding: 40px 8%;
-    border-top: 1px solid #333;
-    color: #777;
-    font-size: 12px;
+
+/* PROFILE */
+
+#profile p {
+    color: #999;
+
+    line-height: 2;
 }
 
-/* スマホ */
+
+/* FOOTER */
+
+footer {
+    padding: 50px 8%;
+
+    border-top: 1px solid #333;
+
+    color: #666;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+
+/* MOBILE */
+
 @media (max-width: 700px) {
 
     header {
+        height: auto;
+        padding: 25px 6%;
+
         display: block;
     }
 
     nav {
         margin-top: 20px;
+
+        gap: 18px;
+
+        flex-wrap: wrap;
     }
 
-    nav a {
-        margin-left: 0;
-        margin-right: 15px;
+    .hero {
+        min-height: 70vh;
     }
 
     .hero h1 {
-        font-size: 55px;
+        letter-spacing: -4px;
+    }
+
+    section {
+        padding: 80px 6%;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    .news-item {
+        display: block;
+    }
+
+    .news-title {
+        margin-top: 10px;
     }
 
     .link-box {
