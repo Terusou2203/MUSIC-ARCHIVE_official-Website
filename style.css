@@ -57,20 +57,22 @@ nav a:hover {
 /* HERO */
 
 .hero {
-    min-height: 85vh;
-
+   min-height: 85vh;
     display: flex;
     align-items: center;
-
     padding: 0 8%;
 
     background:
         linear-gradient(
-            90deg,
-            #111 0%,
-            #111 50%,
-            #181818 100%
-        );
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("hero.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 }
 
 .hero h1 {
